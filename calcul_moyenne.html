@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calcul de moyenne pondérée</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+	<meta charset="utf-8">
+	<script>
+		// Fonction pour calculer la moyenne pondérée
+		function calculerMoyenne() {
+			// Récupérer les notes et coefficients pour chaque matière dans chaque module
+			// Module 1
+			var retex = parseFloat(document.getElementById("retex").value);
+			var entreprise = parseFloat(document.getElementById("entreprise").value);
+            // Module 2
+			var note_module2 = parseFloat(document.getElementById("module2").value);
+			// Module 3
+			var reseaux = parseFloat(document.getElementById("reseaux").value);
+			var bdd = parseFloat(document.getElementById("bdd").value);
+			var systemeExploit = parseFloat(document.getElementById("systeme-exploit").value);
+			var projetC = parseFloat(document.getElementById("projet-c").value);
+			var proba = parseFloat(document.getElementById("proba").value);
+			var poo = parseFloat(document.getElementById("poo").value);
+			// Module 4
+			var tns = parseFloat(document.getElementById("tns").value);
+			var archi = parseFloat(document.getElementById("archi").value);
+
+			// Récupérer les coefficients pour chaque matière dans chaque module
+			// Module 1
+			var coeffRetex = 2.0;
+			var coeffEntreprise = 8.0;
+			// Module 3
+			var coeffReseaux = 2.5;
+			var coeffBdd = 1.5;
+			var coeffSystemeExploit = 1.5;
+			var coeffProjetC = 1.0;
+			var coeffProba = 1.0;
+			var coeffPoo = 2.5;
+			// Module 4
+			var coeffTns = 4.0;
+			var coeffArchi = 2.0;
+
+			// Calculer la moyenne pondérée pour chaque module
+			// Module 1
+			var moyenneModule1 = (retex * coeffRetex + entreprise * coeffEntreprise) / (coeffRetex + coeffEntreprise);
+            // Module 2
+			var moyenneModule2 = note_module2;
+			// Module 3
+			var moyenneModule3 = (reseaux * coeffReseaux + bdd * coeffBdd + systemeExploit * coeffSystemeExploit + projetC * coeffProjetC + proba * coeffProba + poo * coeffPoo) / (coeffReseaux + coeffBdd + coeffSystemeExploit + coeffProjetC + coeffProba + coeffPoo);
+			// Module 4
+			var moyenneModule4 = (tns * coeffTns + archi * coeffArchi) / (coeffTns + coeffArchi);
+
+			// Calculer la moyenne générale
+			var moyenneGenerale = (moyenneModule1 + moyenneModule2 + moyenneModule3 + moyenneModule4) / 4;
+
+			// Afficher les résultats
+			document.getElementById("moyenne-module-1").textContent = moyenneModule1.toFixed(2);
+            document.getElementById("moyenne-module-2").textContent = moyenneModule2.toFixed(2);
+			document.getElementById("moyenne-module-3").textContent = moyenneModule3.toFixed(2);
+			document.getElementById("moyenne-module-4").textContent = moyenneModule4.toFixed(2);
+            document.getElementById("moyenne-generale").textContent = moyenneGenerale.toFixed(2);
+		}
+		</script>
+</head>
+	<body>
+		<h1>Calcul de moyenne pondérée</h1>
+		<h2>Module 1</h2>
+	<form>
+		<label for="retex">RETEX:</label>
+		<input type="number" id="retex"><br>
+
+		<label for="entreprise">Entreprise:</label>
+		<input type="number" id="entreprise"><br>
+	</form>
+
+    <h2>Module 2</h2>
+	<form>
+		<label for="Module 2">Formation Humaine et culture de l'ingénieur:</label>
+		<input type="number" id="module2"><br>
+	</form>
+
+	<h2>Module 3</h2>
+	<form>
+		<label for="reseaux">Réseaux:</label>
+		<input type="number" id="reseaux"><br>
+
+		<label for="bdd">Bases de données:</label>
+		<input type="number" id="bdd"><br>
+
+		<label for="systeme-exploit">Systèmes d'exploitation:</label>
+		<input type="number" id="systeme-exploit"><br>
+
+		<label for="projet-c">Projet C:</label>
+		<input type="number" id="projet-c"><br>
+
+		<label for="proba">Probabilités:</label>
+		<input type="number" id="proba"><br>
+
+		<label for="poo">POO:</label>
+		<input type="number" id="poo"><br>
+	</form>
+
+	<h2>Module 4</h2>
+	<form>
+		<label for="tns">TNS:</label>
+		<input type="number" id="tns"><br>
+
+		<label for="archi">Architecture Microprocesseur:</label>
+		<input type="number" id="archi"><br>
+	</form>
+
+	<button onclick="calculerMoyenne()">Calculer la moyenne pondérée</button>
+
+	<h2>Résultats</h2>
+	<table>
+		<tr>
+		  <th>Module</th>
+		  <th>Moyenne</th>
+		</tr>
+		<tr>
+		  <td>Module 1</td>
+		  <td><span id="moyenne-module-1"></span></td>
+		</tr>
+		<tr>
+		  <td>Module 2</td>
+		  <td><span id="moyenne-module-2"></span></td>
+		</tr>
+		<tr>
+		  <td>Module 3</td>
+		  <td><span id="moyenne-module-3"></span></td>
+		</tr>
+		<tr>
+		  <td>Module 4</td>
+		  <td><span id="moyenne-module-4"></span></td>
+		</tr>
+		<tr>
+		  <td>Moyenne générale</td>
+		  <td><span id="moyenne-generale"></span></td>
+		</tr>
+	  </table>
+	  
+	</body>
+</html>

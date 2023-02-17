@@ -1,0 +1,43 @@
+
+
+body {
+  background-image: url(img/esiea.png);
+  background-size: 30%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Ajouter cette classe pour les éléments où vous voulez répéter le fond d'écran */
+.background-repeat {
+  background: url(img/esiea.png) repeat;
+  background-attachment: local;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+}
+
+form input[type="number"] {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
